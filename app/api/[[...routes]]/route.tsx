@@ -54,7 +54,7 @@ app.frame('/1', (c) => {
         alignItems: 'center',
         position: 'relative'
       }}>
-        {/* @ts-ignore */}
+       
         <img width="1200" height="630" alt="background" src={`/0.png`} style={{position: 'absolute', width: '100%', height: '100%', objectFit: 'cover'}} />
         <div
           style={{
@@ -79,7 +79,7 @@ app.frame('/1', (c) => {
         >
           {status === 'response'
             ? `did ${delegate ? delegate.toUpperCase() : ''} voted in the most recent proposal? `
-            : 'Welcome!'}
+            : ''}
         </div>
       </div>
     ),
