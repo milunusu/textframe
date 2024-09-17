@@ -55,7 +55,7 @@ app.frame('/1', (c) => { //good delegate
         position: 'relative'
       }}>
        
-        <img width="1200" height="630" alt="background" src={`/0.png`} style={{position: 'absolute', width: '100%', height: '100%', objectFit: 'cover'}} />
+        <img width="1200" height="630" alt="background" src={`/10.png`} style={{position: 'absolute', width: '100%', height: '100%', objectFit: 'cover'}} />
         <div
           style={{
             position: 'absolute',
@@ -189,7 +189,127 @@ app.frame('/3', (c) => { //reccomendation by social graph
   const delegate = inputText || buttonValue
   return c.res({
     action: '/4',
-    image: 'http://localhost:3000/7.png',
+    image: (  
+      <div
+        style={{
+          display: 'flex',
+          background: '#f6f6f6',
+          alignItems: 'center',
+          position: 'relative',
+        }}
+      > 
+        <img width="1200" height="630" alt="background" src={`/8.png`} />
+        <div
+          style={{
+            display: 'flex',
+            flexDirection: 'column',
+            position: 'absolute',
+            color: '#161B33',
+            fontSize: '65px',
+            textTransform: 'uppercase',
+            letterSpacing: '-0.030em',
+            width: '100%',
+            boxSizing: 'border-box',
+            alignItems: 'center',
+            lineHeight: 0.8,
+            padding: '0px 20px',
+            overflow: 'hidden', 
+            textOverflow: 'ellipsis',
+            textAlign: 'center', 
+            top: '22%',
+            height: '80%',
+          }}>      
+          {/* Container for items */}
+          <div style={{
+            display: 'flex',
+            flexDirection: 'row', // Items in one row
+            justifyContent: 'space-between', // Space items evenly
+            width: '100%',
+            maxWidth: '100%',
+          }}>
+            {/* Item 1 */}
+            <div style={{
+              color: '#36A4B4',
+              marginLeft: '1%',
+              marginRight: '0%',
+              textOverflow: 'ellipsis',
+              whiteSpace: 'nowrap',
+              height: 'auto',
+            }}>                    
+              opmichael.eth
+            </div>
+
+            {/* Item 2 centered */}
+            <div style={{
+              color: '#E5383B',
+              marginLeft: '0%',
+              marginRight: '2%',
+              textOverflow: 'ellipsis',
+              whiteSpace: 'nowrap',
+              height: 'auto',
+            }}>                    
+              muluneiser
+            </div>
+
+            {/* Item 3 */}
+            <div style={{
+              color: '#36A4B4',
+              marginLeft: '0%',
+              marginRight: '3%',
+              textOverflow: 'ellipsis',
+              whiteSpace: 'nowrap',
+              height: 'auto',
+            }}>                    
+              0x00...0000
+            </div>
+          </div>
+
+          {/* Second Row */}
+          <div style={{
+            display: 'flex',
+            flexDirection: 'row', // Items in one row
+            justifyContent: 'space-between', // Space items evenly
+            width: '100%',
+            maxWidth: '100%',
+            marginTop: '36px',
+          }}>
+            <div style={{
+              color: '#000000',
+              marginLeft: '14%',
+              marginRight: '0%',
+              textOverflow: 'ellipsis',
+              whiteSpace: 'nowrap',
+              height: 'auto',
+            }}>                    
+              3
+            </div>
+            <div style={{
+              color: '#000000',
+              margin: '0 auto',
+              textOverflow: 'ellipsis',
+              whiteSpace: 'nowrap',
+              height: 'auto',
+            }}>                    
+              22
+            </div>
+            <div style={{
+              color: '#000000',
+              marginLeft: '0%',
+              marginRight: '11%',
+              textOverflow: 'ellipsis',
+              whiteSpace: 'nowrap',
+              height: 'auto',
+            }}>                    
+              109
+            </div>
+          </div>
+          
+        </div>
+      </div>
+      
+      ),
+       
+     
     intents: [
       <Button value="next">next</Button>,
      
@@ -197,6 +317,7 @@ app.frame('/3', (c) => { //reccomendation by social graph
     ],
   })
 })
+   
 
 app.frame('/4', (c) => { //random by error 
   const { buttonValue, inputText, status } = c
