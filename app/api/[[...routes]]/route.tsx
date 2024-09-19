@@ -496,7 +496,7 @@ app.frame('/5', (c) => {
               justifyContent: 'space-between',
               width: '100%',
               maxWidth: '100%',
-              marginTop: '36px',
+              marginTop: '33px',
               paddingLeft: '250px', 
               paddingRight: '250px',
             }}
