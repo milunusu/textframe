@@ -317,9 +317,229 @@ app.frame('/3', (c) => { //reccomendation by social graph
     ],
   })
 })
-   
 
-app.frame('/4', (c) => { //random by error 
+//social graph only 1 delegate
+
+app.frame('/4', (c) => {
+  const { buttonValue, inputText, status } = c;
+  const delegate = inputText || buttonValue;
+  return c.res({
+    action: '/5',
+    image: (
+      <div
+        style={{
+          display: 'flex',
+          background: '#f6f6f6',
+          alignItems: 'center',
+          position: 'relative',
+        }}
+      > 
+        <img width="1200" height="630" alt="background" src={`/13.png`} />
+        <div
+          style={{
+            display: 'flex',
+            flexDirection: 'column',
+            position: 'absolute',
+            color: '#161B33',
+            fontSize: '65px',
+            textTransform: 'uppercase',
+            letterSpacing: '-0.030em',
+            width: '100%',
+            boxSizing: 'border-box',
+            alignItems: 'center',
+            lineHeight: 0.8,
+            padding: '0px 20px',
+            overflow: 'hidden',
+            textOverflow: 'ellipsis',
+            textAlign: 'center', 
+            top: '30%',
+            height: '80%',
+          }}>      
+
+          {/* Container for items */}
+          <div style={{
+            display: 'flex',
+            flexDirection: 'row',
+            marginRight: '-1200px', 
+            marginTop: '0px',
+            textAlign: 'right',
+            width: '100%',
+            maxWidth: '100%',
+          }}>
+            {/* delegate */}
+            <div style={{
+              color: '#E5383B',
+              marginLeft: '0 auto',
+              textOverflow: 'ellipsis',
+              whiteSpace: 'nowrap',
+              height: 'auto',
+            }}>                    
+              opmichael.eth
+            </div>
+          </div>
+
+          {/* Second Row */}
+          <div style={{
+            display: 'flex',
+            flexDirection: 'row',
+            marginLeft: '390px', 
+            marginTop: '35px',
+            textAlign: 'right',
+            width: '100%',
+            maxWidth: '100%',
+            
+          }}>
+            <div style={{
+              color: '#000000',
+              margin: '0 auto',
+              textOverflow: 'ellipsis',
+              whiteSpace: 'nowrap',
+              height: 'auto',
+            }}>                    
+              1
+            </div>
+          </div>
+          
+        </div>
+      </div>
+    ),
+    intents: [
+      <Button value="next">next</Button>,
+      status === 'response' && <Button.Reset>Reset</Button.Reset>,
+    ],
+  });
+});
+
+//social graph only 2 delegates
+
+app.frame('/5', (c) => {
+  const { buttonValue, inputText, status } = c;
+  const delegate = inputText || buttonValue;
+  return c.res({
+    action: '/6',
+    image: (
+      <div
+        style={{
+          display: 'flex',
+          background: '#f6f6f6',
+          alignItems: 'center',
+          position: 'relative',
+        }}
+      >
+        <img width="1200" height="630" alt="background" src={`/12.png`} />
+        <div
+          style={{
+            display: 'flex',
+            flexDirection: 'column',
+            position: 'absolute',
+            color: '#161B33',
+            fontSize: '65px',
+            textTransform: 'uppercase',
+            letterSpacing: '-0.030em',
+            width: '100%',
+            boxSizing: 'border-box',
+            alignItems: 'center',
+            lineHeight: 0.8,
+            padding: '0px 20px',
+            overflow: 'hidden',
+            textOverflow: 'ellipsis',
+            textAlign: 'center',
+            top: '23%',
+            height: '80%',
+          }}
+        >
+          {/* First Row */}
+          <div
+            style={{
+              display: 'flex',
+              flexDirection: 'row',
+              justifyContent: 'space-between',
+              width: '100%',
+              maxWidth: '100%',
+              paddingLeft: '200px', 
+              paddingRight: '200px',
+            }}
+          >
+            {/* delegate 1*/}
+            <div
+              style={{
+                color: '#E5383B',
+                margin: '0 45px',
+                textOverflow: 'ellipsis',
+                whiteSpace: 'nowrap',
+                height: 'auto',
+                
+              }}
+            >
+              MULUNEISER
+            </div>
+
+            {/* delegate 2 */}
+            <div
+              style={{
+                color: '#E5383B',
+                margin: '0 45px',
+                textOverflow: 'ellipsis',
+                whiteSpace: 'nowrap',
+                height: 'auto',
+              }}
+            >
+              0X00...0000
+            </div>
+          </div>
+
+          {/* Second Row */}
+          <div
+            style={{
+              display: 'flex',
+              flexDirection: 'row',
+              justifyContent: 'space-between',
+              width: '100%',
+              maxWidth: '100%',
+              marginTop: '36px',
+              paddingLeft: '250px', 
+              paddingRight: '250px',
+            }}
+          >
+            {/* Number 2 */}
+            <div
+              style={{
+                color: '#000000',
+                margin: '0 100px',
+                textOverflow: 'ellipsis',
+                whiteSpace: 'nowrap',
+                height: 'auto',
+              }}
+            >
+              00
+            </div>
+
+            {/* Number 3 */}
+            <div
+              style={{
+                color: '#000000',
+                margin: '0 100px',
+                textOverflow: 'ellipsis',
+                whiteSpace: 'nowrap',
+                height: 'auto',
+              }}
+            >
+              00
+            </div>
+          </div>
+        </div>
+      </div>
+    ),
+    intents: [
+      <Button value="next">next</Button>,
+
+      status === 'response' && <Button.Reset>Reset</Button.Reset>,
+    ],
+  });
+});
+
+
+app.frame('/6', (c) => { //random by error 
   const { buttonValue, inputText, status } = c
   const delegate = inputText || buttonValue
   
