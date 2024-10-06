@@ -99,7 +99,7 @@ app.frame('/1', (c) => {
     intents: [
       <Button value="next">next</Button>,
       //SHARE BUTTON 
-      <Button.Link href='https://warpcast.com/~/compose?text=Check%20if%20you%20have%20an%20active%20Optimism%20delegate!%20%F0%9F%98%83&embeds[]=https://test-frame-nu.vercel.app/api'>Share</Button.Link>,
+      <Button.Link href='https://warpcast.com/~/compose?text=Most%20Farcaster%20users%20haven%E2%80%99t%20chosen%20an%20Optimism%20delegate%20yet%2C%20and%20over%2050%25%20have%20an%20inactive%20delegate.%20Check%20yours%20now!%20%F0%9F%98%84%F0%9F%94%B4%E2%9C%A8&embeds[]=https://test-frame-nu.vercel.app/api'>Share</Button.Link>,
 
       status === 'response' && <Button.Reset>Reset</Button.Reset>,
     ],
