@@ -37,7 +37,7 @@ app.frame('/0', (c) => {
   })
 })
 
-app.frame('/1', (c) => { //good delegate
+app.frame('/1', (c) => { 
   const { buttonValue, inputText, status } = c;
   const delegate = inputText || buttonValue || ''; 
 
@@ -45,51 +45,67 @@ app.frame('/1', (c) => { //good delegate
     action: '/2',
     image: (
       <div style={{
-        display: 'flex',
-        background: '#f6f6f6',
-        width: '100%',
-        height: '100%',
-        flexDirection: 'column',
-        justifyContent: 'flex-end',
-        alignItems: 'center',
-        position: 'relative'
+          display: 'flex',
+          background: '#f6f6f6',
+          width: '100%',
+          height: '100%',
+          flexDirection: 'column',
+          justifyContent: 'flex-end',
+          alignItems: 'flex-end',
+          position: 'relative',
+          overflow: 'hidden'
       }}>
-       
-        <img width="1200" height="630" alt="background" src={`/10.png`} style={{position: 'absolute', width: '100%', height: '100%', objectFit: 'cover'}} />
-        <div
-          style={{
-            position: 'absolute',
-            color: '#000000', 
-            fontSize: '75px', 
-            fontWeight: 'bold', 
-            lineHeight: '0.7', 
-            textTransform: 'uppercase', 
-            letterSpacing: '-0.030em',
-            whiteSpace: 'wrap',
-            overflow: 'hidden',
-            textOverflow: 'ellipsis',
-            width: '100%', 
-            margin: '20px', 
-            paddingLeft: '25px',
-            paddingRight: '25px',
-            left: '-20px', 
-            top: '20px', 
-            textAlign: 'center', 
-          }}
-        >
-          {status === 'response'
-            ? `did ${delegate ? delegate.toUpperCase() : ''} voted in the most recent proposal? `
-            : ''}
-        </div>
+          <img width="1200" height="630" alt="background" src={`/10.png`} style={{position: 'absolute', width: '100%', height: '100%', objectFit: 'cover'}} />
+          
+          <div
+              style={{
+                  display: 'flex',
+                  flexDirection: 'column',
+                  position: 'absolute',
+                  color: '#161B33',
+                  fontSize: '75px',
+                  textTransform: 'uppercase',
+                  letterSpacing: '-0.035em',
+                  width: '90%',
+                  padding: '10px',
+                  top: '6%',
+                  height: '30%',
+                  overflow: 'hidden',
+                  lineHeight: 0.6,
+                  textAlign: 'right',
+                  transform: 'translateX(-60px)'
+              }}
+          >
+              <div style={{
+                  display: 'flex',
+                  justifyContent: 'center',
+                  width: '100%',
+                  flexWrap: 'wrap'
+              }}>
+                  <div style={{ marginRight: '10px' }}>Did</div>
+                  <div style={{display: 'flex', color: '#E5383B', margin: '0 10px' }}>{delegate || 'delegate'}</div>
+                  <div style={{ marginLeft: '10px' }}>vote</div>
+                  <div style={{ marginLeft: '10px' }}>in</div>
+                  <div style={{ marginLeft: '10px' }}>the</div>
+                  <div style={{ marginLeft: '10px' }}>most</div>
+                  <div style={{ marginLeft: '10px' }}>recent</div>
+                  <div style={{ marginLeft: '10px' }}>proposal?</div>
+              </div>
+          </div>
       </div>
-    ),
+  ),
+ 
+
     intents: [
       <Button value="next">next</Button>,
-  
+      //SHARE BUTTON 
+      <Button.Link href='https://warpcast.com/~/compose?text=Check%20if%20you%20have%20an%20active%20Optimism%20delegate!%20%F0%9F%98%83&embeds[]=https://test-frame-nu.vercel.app/api'>Share</Button.Link>,
+
       status === 'response' && <Button.Reset>Reset</Button.Reset>,
     ],
   });
 });
+
 
 app.frame('/2', (c) => { // random recommendation
   const { buttonValue, inputText, status } = c
